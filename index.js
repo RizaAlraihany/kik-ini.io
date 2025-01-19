@@ -13,12 +13,21 @@ document.getElementById("toggleButton").addEventListener("click", function () {
   }
 });
 
-document.getElementById("myForm").addEventListener("submit", function (event) {
-  event.preventDefault();
-  const textareaValue = document.getElementById("myTextarea").value;
-  localStorage.setItem("textareaContent", textareaValue);
-  alert("jawaban kamu sudah dikirimkan!");
-  window.location.href = "flower.html";
+const contactForm = document.getElementById("myForm");
+contactForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  const url = e.target.action;
+  const formData = new FormData(contactForm);
+  fetch(url, {
+    method: "POST",
+    body: formData,
+    mode: "no-cors",
+  })
+    .then(() => {
+      // url thank you
+      window.location.href = "thankyou.html";
+    })
+    .catch((e) => alert("Error occured"));
 });
 
 window.onload = function () {
@@ -44,4 +53,3 @@ function startTypingAnimation() {
 
   type();
 }
-
