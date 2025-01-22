@@ -32,7 +32,6 @@ body {
 }
 
 .thankYouGroup {
-  width: 90%;
   position: fixed;
   top: 80px;
   left: 50%;
@@ -42,8 +41,6 @@ body {
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  font-size: 2.5rem;
-  font-weight: 900;
   text-align: center;
   color: #82c4e8; /* Brighter color */
   margin-bottom: 20px;
@@ -52,6 +49,8 @@ body {
 
 .thankYouGroup .thankYouItems > span {
   animation: glow 2.5s ease-in-out infinite;
+  font-size: 2.5rem;
+  font-weight: 900;
 }
 .thankYouGroup p {
   color: azure; 
